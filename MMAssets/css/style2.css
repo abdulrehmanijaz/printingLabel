@@ -1,0 +1,124 @@
+body{
+    margin:0;
+}
+@font-face {
+    font-family: 'Effra';
+    src: url(fonts/Effra_Std_Lt.ttf);
+ }
+ @font-face {
+    font-family: 'Effra';
+    src: url(fonts/Effra_Std_Rg.ttf);
+ }
+ @font-face {
+    font-family: 'Effra';
+    src: url(fonts/Effra\ Light.ttf);
+    font-weight: 400;
+ }
+ body{ font-family: 'Effra';font-weight: 400; background-color: #272B34; }
+img{ max-width: 100%;height: auto; }
+a{ text-decoration: none; }
+.Form-wrapper{ width: 100%;max-width: 1280px;overflow: hidden;margin: 0 auto;position: relative;background-color: #272B34;}
+.contact-form-sec{ position: relative; }
+.contact-form-sec img{ display: none; }
+.form-text {text-align: center;}
+.contact-form-sec h1{ font-size: 45px;line-height: 1;margin:20px 0;color: #fff; }
+.form-control {font-family: 'Effra';font-weight: 400;padding-top: 15px;line-height: 1.5;background-color: #fff;border-radius: 15px;color: #A1A3A7;font-weight: 500;height: 40px;font-size: 16px;padding: 10px 30px;border: none;padding-top: 15px !important;}
+.form-control::placeholder{ font-size: 16px;color: #A1A3A7; }
+.form-control:focus{ border: none;outline: none; }
+.form-text .form-control{max-width: 300px;width: 100%;}
+.form-group {margin-bottom: 30px;}
+button, input {overflow: visible;}
+.btn {display: inline-block;font-weight: 600;color: #212529;text-align: center;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;background-color: transparent;border: 1px solid transparent;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;border-radius: .25rem;transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;} 
+.btn-default {background-color: #11D688;color: #272B34;font-size: 25px;max-width: 200px;width: 100%;border-radius: 5px;padding-top: 10px;}
+.btn-default:hover{ background-color: #fff; }
+.innovent-logo {text-align: center;padding-bottom: 20px;}
+.innovent-logo span{display: block;color: #fff;font-size: 17px;padding-left: 20px; }
+/* -Second Form--------*/
+.sec_form_sec{ padding: 0 10px; }
+.sec_form_sec label{ font-size: 20px;color: #fff; }
+.sec_form_sec .form-control{ background-color: transparent;border: 1px solid #fff;padding: 5px 20px; }
+.sec_form_sec .form-group{ display: grid; }
+.sec_form_sec .form-group.serial span{font-size:20px; color: #fff; }
+
+@media (min-width:768px){
+    .contact-form-sec img{ display: block; }
+    .form-text {position: absolute;top: 0;left: 50%;transform: translate(-50%,0);width: 100%;max-width: 500px;text-align: center;}
+    .contact-form-sec h1{margin-bottom: 50px;}
+    .form-control {font-size: 25px;width: 100%;padding: 10px 30px;border: none;}
+    .form-text .form-control{ max-width: 450px; }
+    .form-control::placeholder{ font-size: 25px; }
+    .innovent-logo {position: absolute;bottom: 30px;left: 30px;padding: 0;}
+    .sec_form {position: absolute;top: 0;width: 100%;left: 5%;}
+    .contact-form-sec .sec_form h1{ text-align: center; }
+    .sec_form_sec .form-group {display: flex;align-items: center;}
+    .sec_form_sec label {font-size: 30px; padding-right: 20px;width: 150px;}
+    .sec_form_sec .form-group.serial .form-control{ border: none;color: #fff; }
+    .btn-center{ display: block !important;text-align: center; }
+    .sec_form_sec .form-control{ max-width: 250px; }
+    .sec_form_sec .form-group.quantity .form-control{ max-width: 50px; }
+    .sec_form_sec .form-group.serial span{font-size:30px }
+    .mcf.form-control{ max-width: 50px; }
+    .mcf2.form-control{ 
+        max-width: 131px;
+        height: 60px;
+     }
+    	  
+ }
+ .error{color: red;}
+ @media (min-width:991px){
+    .contact-form-sec h1{margin-bottom: 150px;margin-top: 40px;}
+    .contact-form-sec .sec_form h1{ margin-bottom: 100px }
+    .btn-center{ margin-top: 150px; }
+ }
+ @media (min-width:1199px){
+    .btn-center{ margin-top: 208px; }
+ }
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-danger {
+    color: #FFF;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.logout{
+    font-size: large;
+    position: relative;
+    
+}
+span.btn.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    position: absolute;
+    right: 14px;
+    z-index: 1000;
+    top: 14px;
+}
+
+span.username {
+    color: #fff;
+    position: absolute;
+    right: 102px;
+    z-index: 1000;
+    top: 25px;
+    text-transform: capitalize;
+}
+
+
+
+
+@media print {
+  footer {page-break-after: always;}
+}
+

@@ -1,0 +1,80 @@
+<div class="contact-form-sec" style="background-image:url(../assets/images/Web_1920_13.png);background-position: center;">
+    <div class="logout">
+        <span class="username">
+            <div class="loading33" style="display:none;">
+                <img src="../assets/images/Eclipse-1s-200px.gif" style="width: 30%;margin-left:71%;margin-top: -23px;">
+            </div>
+        </span>
+        <span style="cursor:pointer" class="btn btn-primary"
+         id="redirection" 
+        >
+        <a href='{{sitelink}}/dashboard' class="item-ref">Printing</a>
+            
+        </span>
+       <span style="cursor:pointer" class="btn btn-danger"  
+       onclick="window.location.href='{{sitelink}}/api/1.0.0/InnoventAppApi/logout/'" 
+       class="btn btn btn-danger">Logout</span> 
+    </div>
+ 
+
+    <div class="sec_form">
+        <h1>Re Printing</h1>
+        <form id="PrinterForm">
+           <div class="sec_form_sec">
+            <div class="form-group">
+                <label>Last Serial</label>
+               <input type="text"  class='form-control' name="serialno" id="serialno">
+            </div>
+             <div class="form-group" >
+                <label>Plant No</label>
+                <select  class="form-control mcf2" id="preselct">
+                    <option value="BG01" data_number="01" data_alpha="BG">BG01</option>
+                    <option value="CH01" data_number="01" data_alpha="CH">CH01</option>
+                    <option value="FGC1" data_number="1" data_alpha="FGC">FGC1</option>
+                    <option value="IN01" data_number="01" data_alpha="IN">IN01</option>
+                    <option value="IR01" data_number="01" data_alpha="IR">IR01</option>
+                    <option value="MC1" data_number="1" data_alpha="MC">MC1</option>
+                    <option value="MC2" data_number="2" data_alpha="MC">MC2</option>
+                    <option value="MC3" data_number="3" data_alpha="MC">MC3</option>
+                    <option value="MC4" data_number="4" data_alpha="MC">MC4</option>
+                    <option value="MC5" data_number="5" data_alpha="MC">MC5</option>
+                    <option value="MC6" data_number="6" data_alpha="MC">MC6</option>
+                    <option value="MC7" data_number="7" data_alpha="MC">MC7</option>
+                    <option value="MC8" data_number="8" data_alpha="MC">MC8</option>
+                    <option value="MC9" data_number="9" data_alpha="MC">MC9</option>
+                    <option value="RAK" data_number="" data_alpha="RAK">RAK</option>
+                    <option value="TREC" data_number="" data_alpha="TREC">TREC</option>
+                </select>&nbsp;&nbsp;
+
+                <input type="text" class="form-control mcf" id="plantref" name="plantref" autocomplete="off" placeholder="MC" value="BG" style="display:none">&nbsp;&nbsp;
+                <input type="text" class="form-control" id="plantNo" name="plantNo" autocomplete="off" placeholder="Plant No" value="01" style="display:none">
+            </div>
+            
+            <div class="form-group quantity">
+                <label>Qty.</label>
+                <input type="number" class="form-control" id="qty" autocomplete="off" name="qty" value="1">
+                <span class="msg_div">
+                    
+                </span>
+            </div>
+                
+
+            <div class="form-group btn-center">
+                <button class="btn btn-default printButton" type="button">Re Print</button> 
+               
+            </div>
+            
+        </div>
+
+        </form>
+      
+    </div>
+    <div class="background_image">
+        <img src="../assets/images/Web_1920_13.png" alt="" >
+    </div>
+</div>
+<div class="innovent-logo">
+    <img src="../assets/images/-logo.png" alt="">
+    <span>App Version: 2.0.1</span>
+</div>
+

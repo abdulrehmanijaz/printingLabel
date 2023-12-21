@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Form</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    </link>
+</head>
+<body>
+
+    <div class="Form-wrapper">
+      <form onsubmit="return false;" id="login_form" id="login_form" autocomplete="off">
+          <div class="contact-form-sec">
+            <img src="../assets/images/Web 1920_12.png" alt="" width="1280" height="800">
+            <div class="form-text">
+                <h1>Label Printing</h1>
+                 <div class="field" >
+                        <div class="msg"></div>
+                     </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" id="username" name="username">
+                    <div class='error error_username'>
+                  </div>
+                </div>
+                 
+                <div class="form-group">
+                    <input type="Password" class="form-control" id="password" name="password" placeholder="Password">
+                    <div class="error error_password">
+                    </div>
+                </div>
+               
+                <input type="hidden"  id='token' name="token" value="123456">
+                <div class="form-group">
+                    <button class="btn btn-default" type="submit" id="submit" type="submit">Send</button>
+                </div>
+            </div>
+        </div>
+        
+      </form>
+        
+        <div class="innovent-logo">
+            <img src="../assets/images/inovent-logo.png" alt="">
+            <span>App Version: 2.0.1</span>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+     
+
+    <script>
+      
+        $(document).on('submit','form#login_form', function(){
+           
+           var error = 0;
+           $("#submit").html('<i class="fa fa-spin fa-spinner"></i>&nbsp;Wait.');
+         
+     
+           if($('[name="username"]').val()==""){
+              error = 1;
+              $('[name="username"]').addClass('error_border');
+              $('.error_username').html('<span>Please Enter Username !</span>');
+              $("#submit").html('Login');
+           }else{
+              $('.error_username').html('');
+              $('[name="username"]').removeClass('error_border');
+           }
+     
+           if($('[name="password"]').val()==""){
+              error = 1;
+              $('[name="password"]').addClass('error_border');
+              $('.error_password').html('<span>Please Enter Password !</span>');
+              $("#submit").html('Login');
+           }else{
+              $('.error_password').html('');
+              $('[name="password"]').removeClass('error_border');
+           }  
+           if(error == 0 ){
+              
+              var formData = new FormData(this);
+           
+              $.ajax({
+                 type:'POST',
+                 url:'api/1.0.0/login/web_login2?v='+(Math.random()*10000000000000),
+                 data:$("#login_form").serialize(),
+                 success: function(data)
+                 {
+                    //console.log(data);
+                    $("#submit").html('LOGIN');
+                    $("#submit").removeAttr('disabled'); 
+                       
+                    
+     
+                    var responseData = data;
+                    
+     
+                    if(responseData.error=="0")
+                    {
+                       $(".msg").html('<div class="alert alert-success alert-padding" style="border-radius: 26px;"><i class="fa fa-thumbs-up"></i>&nbsp;Login Successfully!</div>');   
+     
+                       setTimeout(function(){ window.location.href = 'dashboard'; }, 1000);
+                    }
+                    
+                 },error: function(e) {
+     
+                 
+                    $("#submit").html('LOGIN');
+                    $("#submit").removeAttr('disabled');
+                    
+                    var responseToManyRequest = e.responseText;
+                    responseToManyRequest = responseToManyRequest.split('pre').join('span');
+                    if(responseToManyRequest !== '' ){
+                    
+                    setTimeout(function(){
+                       $(".msg").html('<div class="alert alert-danger background-danger" style="border-radius: 26px;"><i class="fa fa-exclamation-circle"></i>&nbsp;'+responseToManyRequest+'</div>');
+
+                    },200);
+                       
+                       setTimeout(function(){ $(".msg").html(''); }, 4000);
+     
+                    }
+                 }
+              });
+           }
+        });
+        
+      </script>
+</body>
+
+</html>
